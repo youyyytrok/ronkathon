@@ -34,9 +34,10 @@ to run example code.
 
 ## Primitives
 
-- [Finite Group](src/field/group.rs)
-- [Fields and Their Extensions](src/field/README.md)
-  - [Binary Fields](src/field/binary_towers/README.md)
+- **Fundamental Algebraic Structures**
+    - [Group](src/algebra/group/README.md)
+    - [Fields and Their Extensions](src/algebra/field/README.md)
+        - [Binary Fields](src/field/binary_towers/README.md)
 - [Curves and Their Pairings](src/curve/README.md)
 - [Polynomials](src/polynomial/mod.rs)
 - [KZG Commitments](src/kzg/README.md)
@@ -46,7 +47,9 @@ to run example code.
 
 ### Signatures
 
-- [Tiny ECDSA](src/ecdsa.rs)
+- [Digital Signature Algorithms](src/dsa/README.md)
+    - [Elliptic Curve Digital Signature Algorithm(ECDSA)](src/dsa/ecdsa.rs)
+    - [Edwards-Curve Digital Signature Algorithm(EdDSA)](src/dsa/eddsa/mod.rs)
 
 ### Encryption
 
@@ -67,10 +70,6 @@ to run example code.
 
 - [Sha256 Hash](src/hashes/README.md)
 - [Poseidon Hash](src/hashes/poseidon/README.md)
-
-## In Progress
-
-- [ ] Edwards curve Signatures (EdDSA)
 
 ## Resources
 
@@ -94,6 +93,23 @@ We have found the following resources helpful in understanding the foundational 
 To see computations used in the background, go to the `math/` directory.
 From there, you can run the `.sage` files in a SageMath environment.
 In particular, the `math/field.sage` computes roots of unity in the `PlutoField` which is of size 101. To install sage on your machine, follow the instructions [here](https://doc.sagemath.org/html/en/installation/index.html). If you are on a Mac, you can install it via homebrew with `brew install --cask sage`.
+
+## Building mdBook
+
+To locally build/serve the [mdBook](https://github.com/rust-lang/mdBook) site, install mdBook and [mdbook-katex](https://github.com/lzanini/mdbook-katex):
+```
+cargo install mdbook
+cargo install mdbook-katex
+```
+
+To build, run:
+```
+cargo run --bin create_mdbook
+cp -r assets book/
+mdbook build
+```
+
+If you want to serve locally, run `mdbook serve`.
 
 ## License
 
