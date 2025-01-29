@@ -16,5 +16,4 @@ jobs:
       - name: Check links
         uses: lycheeverse/lychee-action@v2
         with:
-          only_warn: 1
-          args: --no-progress --verbose "**/README.md"
+          args: --no-progress --verbose --fail 0 "**/README.md"
