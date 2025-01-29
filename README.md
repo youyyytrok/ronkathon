@@ -37,7 +37,7 @@ to run example code.
 - **Fundamental Algebraic Structures**
     - [Group](src/algebra/group/README.md)
     - [Fields and Their Extensions](src/algebra/field/README.md)
-        - [Binary Fields](src/field/binary_towers/README.md)
+        - [Binary Fields](src/algebra/field/binary_towers/README.md)
 - [Curves and Their Pairings](src/curve/README.md)
 - [Polynomials](src/polynomial/mod.rs)
 - [KZG Commitments](src/kzg/README.md)
@@ -113,7 +113,7 @@ If you want to serve locally, run `mdbook serve`.
 
 ## License
 
-Licensed under the Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
+Licensed under the Apache License, Version 2.0 ([LICENSE-APACHE](./LICENSE) or http://www.apache.org/licenses/LICENSE-2.0)
 
 ## Contributing
 
