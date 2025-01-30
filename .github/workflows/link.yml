@@ -25,7 +25,7 @@ jobs:
         run: cargo install mdbook
 
       - name: Build book
-        run: mdbook build
+        run: mdbook build .
 
       - name: Check links with mdbook
         run: mdbook test --no-fail
