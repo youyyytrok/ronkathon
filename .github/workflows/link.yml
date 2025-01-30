@@ -13,7 +13,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Check links
-        uses: lycheeverse/lychee-action@v2
+      - name: Set up Rust
+        uses: actions/setup-rust@v1
         with:
-          args: --no-progress --verbose "**/README.md"
+          rust-version: 1.61.0
+
+      - name: Install mdbook
+        run: cargo install mdbook
+
+      - name: Build book
+        run: mdbook build
+
+      - name: Check links with mdbook
+        run: mdbook test --no-fail
