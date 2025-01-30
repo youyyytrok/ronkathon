@@ -38,10 +38,15 @@ jobs:
           curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh
           rustup update
 
-      - name: Install mdbook
+      - name: Install mdbook and plugins
         run: |
           cargo binstall --no-confirm --version ${MDBOOK_VERSION} mdbook
           cargo binstall --no-confirm --version ${MDBOOK_KATEX_VERSION} mdbook-katex
+          cargo binstall --no-confirm mdbook-linkcheck
+
+      - name: Check links with mdBook Linkcheck
+        run: |
+          mdbook-linkcheck build
 
       - name: Setup Pages
         id: pages
