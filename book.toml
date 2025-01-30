@@ -18,3 +18,9 @@ after = ["links"]
 default-theme = "dark"
 preferred-dark-theme = "ayu"
 git-repository-url = "https://github.com/pluto/ronkathon"
+
+[output.linkcheck]
+follow-web-links = true  # Проверять внешние ссылки
+traverse-parent-directories = false  # Не проверять ссылки выше корня книги
+exclude = ["https://example.com"]  # Добавьте ссылки, которые нужно игнорировать
+warning-policy = "warn"  # Обрабатывать предупреждения как предупреждения
