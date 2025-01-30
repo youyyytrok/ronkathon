@@ -4,17 +4,22 @@ on:
   push:
     branches:
       - "**"
+  pull_request:
+    branches:
+      - main
 
 jobs:
   check-links:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Rust
-        uses: rust-lang/setup-rust@v1
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: nightly-2024-06-10  # Используй необходимую версию
 
       - name: Install mdbook
         run: cargo install mdbook
