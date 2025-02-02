@@ -42,7 +42,6 @@ jobs:
         run: |
           cargo binstall --no-confirm --version ${MDBOOK_VERSION} mdbook
           cargo binstall --no-confirm --version ${MDBOOK_KATEX_VERSION} mdbook-katex
-          cargo binstall --no-confirm mdbook-linkcheck
 
       - name: Check links with mdBook Linkcheck
         run: |
